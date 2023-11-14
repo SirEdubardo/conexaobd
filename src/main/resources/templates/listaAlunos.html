@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Alunos</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID:</th>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Matricula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="aluno: ${alunos}">
+                <td data-th-text="${aluno.id}"></td>
+                <td data-th-text="${aluno.nome}"></td>
+                <td data-th-text="${aluno.matricula}"></td>
+                <td><a th:href="@{'/aluno/excluir/'+${aluno.id}}">Excluir</a></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    
+</body>
+</html>
